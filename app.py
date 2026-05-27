@@ -94,7 +94,7 @@ def enviar_dm(user_id):
         "👋 ¡Hola! Qué alegría tu interés en Laguna Bella, San Carlos. 🏡✨\n"
         "Alquilamos las cabañas Blue y Bella. Aquí tienes los detalles:\n\n"
         "📍 UBICACIÓN: Laguna de San Carlos, KM 17. Búscanos en Waze/Google Maps como 'Laguna Bella, San Carlos' (a 1h 40m de la ciudad, 30m de Coronado).\n\n"
-        "🛏️ CABAÑAS: Tienen 2 camas (1 Queen y 1 doble deslizable), TV, Jacuzzi con hidromasaje y cocina equipada (estufa, nevera pequeña, vajilla, cafetera). \n\n"
+        "🛏️ CABAÑAS: Tienen 2 camas (1 Queen y 1 doble deslizable), TV, terraza con asador y hamacas y espectacular vista al mar y montañas, Jacuzzi con hidromasaje y cocina equipada (estufa, nevera pequeña, vajilla, cubiertos, vasos, tazas, cafetera). \n\n"
         "🌲 ALREDEDORES: Lago (10 min), Río Teta (7 min), sendero al Cerro Picacho (30-45 min caminando), playas y súpermercados a 30 min.\n\n"
         "💰 PRECIOS:\n"
         "• 1 persona: $120 | 2 personas: $125\n"
