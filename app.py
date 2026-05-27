@@ -96,7 +96,7 @@ def enviar_dm(user_id):
         "📍 UBICACIÓN: Laguna de San Carlos, KM 17. Búscanos en Waze/Google Maps como 'Laguna Bella, San Carlos' (a 1h 40m de la ciudad, 30m de Coronado).\n\n"
         "🛏️ CABAÑAS: Tienen 2 camas (1 Queen y 1 doble deslizable), TV, Jacuzzi con hidromasaje y cocina equipada (estufa, nevera pequeña, vajilla, cafetera). \n\n"
         "🌲 ALREDEDORES: Lago (10 min), Río Teta (7 min), sendero al Cerro Picacho (30-45 min caminando), playas y súpermercados a 30 min.\n\n"
-        "💰 PRECIOS POR NOCHE:\n"
+        "💰 PRECIOS:\n"
         "• 1 persona: $120 | 2 personas: $125\n"
         "• 3 personas: $130 | 4 personas: $135\n\n"
         "📲 RESERVAS: En Airbnb o directo con Jorge Torres al 📞 6250-1227 (Yappy, transferencia o tarjeta).\n\n"
