@@ -86,32 +86,41 @@ def responder_comentario(comment_id):
 
 
 def enviar_dm(user_id):
-
-    print("Enviando DM...")
-
+    print("Enviando DM de producción...")
     url = "https://graph.facebook.com/v25.0/me/messages"
+
+    # Texto resumido, scannable y optimizado para un solo DM en Instagram
+    texto_mensaje = (
+        "👋 ¡Hola! Qué alegría tu interés en nuestras cabañas en Laguna Bella, San Carlos. 🏡✨\n\n"
+        "Actualmente alquilamos la cabaña Blue y la cabaña Bella. Aquí tienes los detalles principales:\n\n"
+        "📍 UBICACIÓN: Laguna de San Carlos, Vía Principal KM 17 (Búscanos en Waze/Google Maps como 'Laguna Bella, San Carlos'). A 1h 40min de la ciudad y 30min de Coronado.\n\n"
+        "🛏️ CABAÑAS: Cuentan con 2 camas (1 Queen y 1 doble deslizable), TV, cocina equipada (estufa, nevera pequeña, vajilla, utensilios, cafetera) y un espectacular Jacuzzi con hidromasaje. *Cabaña Blue incluye microondas.\n\n"
+        "🌲 ACTIVIDADES CERCANAS: Lago a 10 min, balneario Río Teta a 7 min, sendero al Cerro Picacho (30-45 min caminando), playas y restaurantes a 30 min.\n\n"
+        "💰 PRECIOS POR NOCHE:\n"
+        "• 1 persona: $120\n"
+        "• 2 personas: $125\n"
+        "• 3 personas: $130\n"
+        "• 4 personas: $135\n\n"
+        "⏰ HORARIOS: Check-in máximo 3:00 PM | Check-out mínimo 12:00 PM (Horario flexible según disponibilidad).\n\n"
+        "📲 RESERVAS Y PAGO: Puedes reservar en Airbnb o directo conmigo, Jorge Torres, al 📞 6250-1227. Aceptamos transferencia bancaria, Yappy y tarjeta de crédito.\n\n"
+        "¿Tienes alguna pregunta adicional o te gustaría verificar disponibilidad para alguna fecha? 👇"
+    )
 
     payload = {
         "recipient": {
             "id": user_id
         },
         "message": {
-            "text": "👋 Hola, gracias por comentar nuestra publicación.\n\n🏡 Con gusto te enviaremos toda la información."
-        },
-        "messaging_type": "RESPONSE"
+            "text": texto_mensaje
+        }
     }
 
     params = {
         "access_token": ACCESS_TOKEN
     }
 
-    response = requests.post(
-        url,
-        json=payload,
-        params=params
-    )
-
-    print("RESPUESTA DM:")
+    response = requests.post(url, json=payload, params=params)
+    print("RESPUESTA DM API:")
     print(response.text)
 
 
