@@ -89,7 +89,9 @@ def enviar_dm(user_id):
 
     print("Enviando DM...")
 
-    url = "https://graph.facebook.com/v25.0/me/messages"
+    IG_USER_ID = os.getenv("IG_USER_ID")
+
+    url = f"https://graph.facebook.com/v25.0/{IG_USER_ID}/messages"
 
     payload = {
         "recipient": {
@@ -97,8 +99,7 @@ def enviar_dm(user_id):
         },
         "message": {
             "text": "👋 Hola, gracias por comentar nuestra publicación.\n\n🏡 Con gusto te enviaremos toda la información."
-        },
-        "messaging_type": "RESPONSE"
+        }
     }
 
     params = {
