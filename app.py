@@ -10,7 +10,6 @@ ACCESS_TOKEN = os.getenv("ACCESS_TOKEN")
 
 @app.route("/webhook", methods=["GET"])
 def verify():
-
     token = request.args.get("hub.verify_token")
     challenge = request.args.get("hub.challenge")
 
@@ -22,20 +21,15 @@ def verify():
 
 @app.route("/webhook", methods=["POST"])
 def webhook():
-
     data = request.json
 
     print("========== WEBHOOK RECIBIDO ==========")
     print(data)
 
     try:
-
         for entry in data.get("entry", []):
-
             for change in entry.get("changes", []):
-
                 if change.get("field") == "comments":
-
                     value = change.get("value", {})
 
                     comentario = value.get("text")
@@ -55,10 +49,10 @@ def webhook():
                         print("Comentario propio ignorado.")
                         continue
 
-                    # Responder comentario público
+                    # 1. Responder comentario público
                     responder_comentario(comment_id)
 
-                    # Enviar DM automático
+                    # 2. Enviar DM automático usando el ID correcto del webhook
                     enviar_dm(user_id)
 
     except Exception as e:
@@ -69,9 +63,7 @@ def webhook():
 
 
 def responder_comentario(comment_id):
-
     print("Respondiendo comentario...")
-
     url = f"https://graph.facebook.com/v25.0/{comment_id}/replies"
 
     payload = {
@@ -80,18 +72,15 @@ def responder_comentario(comment_id):
     }
 
     response = requests.post(url, data=payload)
-
     print("RESPUESTA COMENTARIO:")
     print(response.text)
 
 
 def enviar_dm(user_id):
-
-    print("Enviando DM...")
-
-    IG_USER_ID = os.getenv("IG_USER_ID")
-
-    url = f"https://graph.facebook.com/v25.0/{IG_USER_ID}/messages"
+    print("Enviando DM de producción...")
+    
+    # Endpoint estándar de producción recomendado por Meta
+    url = "https://graph.facebook.com/v25.0/me/messages"
 
     payload = {
         "recipient": {
@@ -106,12 +95,7 @@ def enviar_dm(user_id):
         "access_token": ACCESS_TOKEN
     }
 
-    response = requests.post(
-        url,
-        json=payload,
-        params=params
-    )
-
+    response = requests.post(url, json=payload, params=params)
     print("RESPUESTA DM:")
     print(response.text)
 
